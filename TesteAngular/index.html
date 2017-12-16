@@ -1,0 +1,44 @@
+<html ng-app="testeApp">
+<head>
+	<script src="js/angular/angular.min.js"></script>
+	<script src="js/teste.js"></script>
+</head>
+<body ng-controller="testeController">
+	{{contador}}
+	<br>
+	{{mensagem}}
+
+	<input type="button" ng-click="ola()" value="Ola">
+	<input type="button" ng-click="mudar()" value="Mudar">
+	<input type="button" ng-click="add()" value="Add">
+	
+	<br>
+
+
+	<br>LISTA</br>
+	<input type="text" ng-model="itemNome">
+	<input type="button" ng-click="addItem()" value="AddItem">
+	
+	<div ng-repeat="item in minhaLista">
+		{{item.id}} - {{item.nome}}
+	</div>
+
+	<br>
+
+	<br>TOGGLE</br>
+	<a href="" ng-click="toggle = !toggle">Toggle Nav</a>
+	<ul ng-show="toggle">
+		<li>Link 1</li>
+		<li>Link 1</li>
+		<li>Link 1</li>
+	</ul>
+
+	<br>
+
+	<br>EXPRESSÕES</br>
+	
+	<p>{{ dados.length > 0 && dados || 'Sem dados'}}</p>
+	<input type="button" ng-click="setDados()" value="Set Dados">
+	<input type="button" ng-click="clearDados()" value="Clear Dados">
+</body>
+</html>
